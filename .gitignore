@@ -4,3 +4,8 @@ index/
 runs/
 __pycache__/
 *.pyc
+.venv/
+__pycache__/
+.pytest_cache/
+index/
+runs/
