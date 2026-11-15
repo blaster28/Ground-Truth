@@ -102,8 +102,15 @@ def _lighton(max_new_tokens: int = 3000):
 
 
 def _rapidocr():
+    """Repli sans GPU. Paquet optionnel (pip install rapidocr-onnxruntime) : il n'existe pas pour
+    toutes les versions de Python, donc il n'est pas dans requirements.txt."""
     import numpy as np
-    from rapidocr_onnxruntime import RapidOCR
+
+    try:
+        from rapidocr_onnxruntime import RapidOCR
+    except ImportError:
+        print("[ocr] pas de GPU et rapidocr-onnxruntime absent : les pages numérisées restent vides")
+        return lambda images: ["" for _ in images]
 
     model = RapidOCR()
 
