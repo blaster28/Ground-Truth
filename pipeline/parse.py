@@ -41,9 +41,13 @@ def read_pdf(pdf: Path, ocr=None) -> list[dict]:
             text = clean_text(page.get_text("text"))
             source = "texte"
             if len(text) < MIN_CHARS and ocr is not None:
+                import time
+
+                t0 = time.time()
                 pix = page.get_pixmap(dpi=OCR_DPI)
                 text = clean_text(ocr(pix))
                 source = "ocr"
+                print(f"[ocr] {pdf.stem} p.{i} : {len(text)} caractères, {time.time() - t0:.0f} s", flush=True)
             pages.append({"doc_id": pdf.stem, "page": i, "text": text, "source": source})
         title = doc_title(doc, pages[0]["text"] if pages else "")
     for p in pages:
