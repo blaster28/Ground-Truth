@@ -56,7 +56,10 @@ def read_dir(pdf_dir: str, ocr=None, skip: set[str] | None = None, cache_path: s
     `cache_path` mémorise le résultat de l'OCR pour ne jamais refaire une page déjà lue."""
     cache = {}
     if cache_path and Path(cache_path).exists():
+        from .ocr import looks_broken
+
         cache = json.loads(Path(cache_path).read_text(encoding="utf-8"))
+        cache = {k: v for k, v in cache.items() if not looks_broken(v)}  # jamais de page corrompue
     pages, todo, bounds = [], [], []
     for pdf in sorted(Path(pdf_dir).glob("*.pdf")):
         if skip and pdf.stem in skip:

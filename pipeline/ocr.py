@@ -72,14 +72,59 @@ def _load(engine: str):
     raise ValueError(f"moteur OCR inconnu : {engine}")
 
 
+def _cast(x, dtype):
+    """Convertit un tenseur flottant (ou la sortie d'un sous-module) vers `dtype`."""
+    import torch
+
+    if torch.is_tensor(x):
+        return x.to(dtype) if x.is_floating_point() else x
+    if hasattr(x, "last_hidden_state"):
+        x.last_hidden_state = x.last_hidden_state.to(dtype)
+        return x
+    if isinstance(x, (tuple, list)):
+        return type(x)(_cast(o, dtype) for o in x)
+    return x
+
+
+def _vision_in_float32(model, dtype) -> None:
+    """En float16, la dernière couche de l'encodeur d'image dépasse 65 504 (le maximum du float16) :
+    les activations deviennent infinies et le modèle n'écrit plus que des « ! ». On garde donc
+    l'encodeur d'image et sa projection en float32 (la normalisation de la projection ramène les
+    valeurs à une échelle sûre) et on ne repasse en float16 qu'à la sortie de la projection."""
+    import torch
+
+    encoder, projection = model.model.vision_encoder, model.model.vision_projection
+    encoder.float()
+    projection.float()
+
+    def to_f32(module, args, kwargs):
+        return _cast(args, torch.float32), {k: _cast(v, torch.float32) for k, v in kwargs.items()}
+
+    encoder.register_forward_pre_hook(to_f32, with_kwargs=True)
+    projection.register_forward_pre_hook(to_f32, with_kwargs=True)
+    projection.register_forward_hook(lambda module, args, kwargs, out: _cast(out, dtype), with_kwargs=True)
+
+
+def looks_broken(text: str) -> bool:
+    """Sortie d'OCR dégénérée : un seul caractère répété (signature d'un débordement numérique)."""
+    t = text.strip()
+    return len(t) > 50 and max(t.count(c) for c in set(t)) > 0.6 * len(t)
+
+
 def _lighton(max_new_tokens: int = 3000):
     """OCR VLM (page image -> Markdown, tableaux compris). Usage repris de la fiche du modèle."""
+    import os
+
     import torch
     from transformers import LightOnOcrForConditionalGeneration, LightOnOcrProcessor
 
-    # T4 (sm75) : le bfloat16 n'y est qu'émulé, on reste en float16 comme le générateur officiel
-    dtype = torch.bfloat16 if torch.cuda.get_device_capability()[0] >= 8 else torch.float16
+    # T4 (sm75) : le bfloat16 n'y est qu'émulé, on reste en float16 comme le générateur officiel.
+    # GT_OCR_DTYPE=float16 force ce mode sur un GPU récent, pour tester le chemin du T4.
+    fp16 = torch.cuda.get_device_capability()[0] < 8 or os.environ.get("GT_OCR_DTYPE") == "float16"
+    dtype = torch.float16 if fp16 else torch.bfloat16
     model = LightOnOcrForConditionalGeneration.from_pretrained(LIGHTON, dtype=dtype).to("cuda").eval()
+    if fp16:
+        _vision_in_float32(model, dtype)
     processor = LightOnOcrProcessor.from_pretrained(LIGHTON)
     processor.tokenizer.padding_side = "left"  # génération par lot : le remplissage va à gauche
     vram_go = torch.cuda.get_device_properties(0).total_memory / 2**30
@@ -96,7 +141,11 @@ def _lighton(max_new_tokens: int = 3000):
         with torch.no_grad():
             out = model.generate(**inputs, max_new_tokens=max_new_tokens, do_sample=False,
                                  repetition_penalty=1.05)
-        return processor.batch_decode(out[:, inputs["input_ids"].shape[1]:], skip_special_tokens=True)
+        texts = processor.batch_decode(out[:, inputs["input_ids"].shape[1]:], skip_special_tokens=True)
+        if any(looks_broken(t) for t in texts):
+            raise RuntimeError("OCR : sortie dégénérée (un caractère répété), probable débordement "
+                               "numérique. L'indexation s'arrête plutôt que d'indexer du bruit.")
+        return texts
 
     return run, batch_size
 
