@@ -11,8 +11,12 @@
 set -euo pipefail
 cmd="$1"; shift
 case "$cmd" in
-  index)  python -m baseline.pipeline index  --pdf-dir "$1" --index-dir "$2" ;;
-  update) python -m baseline.pipeline update --index-dir "$1" --pdf-dir "$2" ;;
-  answer) python -m baseline.pipeline answer --index-dir "$1" --questions "$2" --out "$3" --backend hf ;;
+  index)  python -m pipeline index  --pdf-dir "$1" --index-dir "$2" ;;
+  update) python -m pipeline update --index-dir "$1" --pdf-dir "$2" ;;
+  answer)
+    # deux processus : la recherche (embedder + reranker) libère la VRAM avant le générateur
+    hits="${3%.json}.hits.json"
+    python -m pipeline retrieve --index-dir "$1" --questions "$2" --out "$hits"
+    python -m pipeline generate --retrieved "$hits" --out "$3" --backend "${GT_BACKEND:-hf}" ;;
   *) echo "usage: run.sh index|update|answer ..." >&2; exit 1 ;;
 esac
