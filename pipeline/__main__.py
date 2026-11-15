@@ -41,6 +41,7 @@ def main() -> None:
     g.add_argument("--tau", type=float, default=answer.TAU)
     g.add_argument("--no-check", action="store_true", help="sans ancrage numérique")
     g.add_argument("--run-name", default="pipeline")
+    g.add_argument("--context", default="mixte", choices=["mixte", "chunks"])
 
     args = ap.parse_args()
     if args.cmd == "index":
@@ -50,7 +51,7 @@ def main() -> None:
     elif args.cmd == "retrieve":
         answer.retrieve(args.index_dir, args.questions, args.out, args.mode, not args.no_rerank)
     else:
-        answer.generate(args.retrieved, args.out, args.backend, args.tau, not args.no_check, args.run_name)
+        answer.generate(args.retrieved, args.out, args.backend, args.tau, not args.no_check, args.run_name, args.context)
 
 
 if __name__ == "__main__":

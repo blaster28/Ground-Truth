@@ -21,8 +21,10 @@ from pathlib import Path
 from . import parse
 
 TAU = 0.05            # seuil du reranker, calibré sur la validation (voir pipeline/calibrate.py)
-CONTEXT_TOKENS = 3000  # contexte volontairement sous les 4 096 : plus rapide, moins de « lost in the middle »
+CONTEXT_TOKENS = 3400  # sous les 4 096 : marge pour la question et la consigne
 MAX_CHUNKS = 8
+FULL_PAGES = 3         # pages dont le texte complet est transmis à l'étape de génération
+PAGE_CHARS = 4500      # une page entière est tronquée au-delà (≈ 1 300 tokens)
 
 SYSTEM = (
     "Tu réponds à des questions sur des rapports publics français (Insee, Cour des comptes), "
@@ -31,12 +33,15 @@ SYSTEM = (
     "Règles :\n"
     "1. Si les extraits ne contiennent pas l'information demandée, ou si la question repose sur une "
     "affirmation que les extraits ne confirment pas, réponds exactement : INTROUVABLE\n"
-    "2. Sinon réponds en français, en une à trois phrases. Recopie les chiffres exactement comme dans "
-    "l'extrait, avec leur unité (%, €, M€, Md€, points...). Ne calcule rien qui ne soit pas demandé.\n"
-    "3. Si deux documents donnent des valeurs différentes pour la même donnée, la publication la plus "
+    "2. Sinon réponds en français, en une ou deux phrases simples, sans mise en forme (pas de gras, "
+    "pas de liste). Donne uniquement ce qui est demandé, sans détail ni commentaire supplémentaire.\n"
+    "3. Recopie les chiffres exactement comme dans l'extrait, avec leur unité (%, €, M€, Md€, "
+    "points...). Vérifie que le chiffre correspond bien à l'année, au lieu et à la catégorie de la "
+    "question. Ne fais aucun calcul qui n'est pas demandé.\n"
+    "4. Si deux documents donnent des valeurs différentes pour la même donnée, la publication la plus "
     "récente fait foi.\n"
-    "4. Si la question demande plusieurs éléments, donne-les tous.\n"
-    "5. Termine par une dernière ligne listant les extraits utilisés, au format\n"
+    "5. Si la question demande plusieurs éléments, donne-les tous, dans une phrase.\n"
+    "6. Termine par une dernière ligne listant les extraits utilisés, au format\n"
     "SOURCES: [doc_id p.N], [doc_id p.N]"
 )
 
@@ -55,8 +60,11 @@ def retrieve(index_dir: str, questions_path: str, out_path: str, mode: str = "hy
         hits = searcher.search(q["question"], mode=mode)
         for h in hits:
             h["title"] = titles.get(h["doc_id"], "")
+        pages = ranked_pages(hits)
+        full = [{**p, "title": titles.get(p["doc_id"], ""),
+                 "text": searcher.page_text[(p["doc_id"], p["page"])]["text"]} for p in pages[:FULL_PAGES]]
         out.append({"qid": q["qid"], "question": q["question"], "hits": hits[:12],
-                    "retrieved": ranked_pages(hits)[:10]})
+                    "full_pages": full, "retrieved": pages[:10]})
     n = max(len(out), 1)
     print(f"[retrieve] {len(out)} questions, {(time.time() - t0) / n:.2f} s par question")
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)
@@ -86,16 +94,36 @@ def grounded(answer: str, context: str) -> bool:
     return True
 
 
-def build_context(gen, question: str, hits: list[dict], dates: dict[str, str]) -> tuple[list[dict], str, list[dict]]:
-    """Ajoute les passages par ordre de pertinence tant que le budget de tokens tient."""
+def _head(h: dict, dates: dict[str, str]) -> str:
+    date = dates.get(h["doc_id"], "")
+    return f"[{h['doc_id']} p.{h['page']}] {h.get('title', '')}" + (f" (publié le {date})" if date else "")
+
+
+def build_context(gen, item: dict, dates: dict[str, str], mode: str = "mixte",
+                  n_full: int = 2) -> tuple[list[dict], str, list[dict]]:
+    """Construit le prompt en ajoutant des blocs par ordre de pertinence tant que le budget tient.
+
+    mode "chunks" : les meilleurs passages seulement.
+    mode "mixte"  : le texte complet des `n_full` meilleures pages (un tableau coupé par le chunking
+                    perd ses en-têtes : la page entière les garde), puis les meilleurs passages des
+                    autres pages.
+    """
+    question, hits = item["question"], item["hits"]
+    candidates = []
+    if mode == "mixte":
+        full = item.get("full_pages", [])[:n_full]
+        done = {(p["doc_id"], p["page"]) for p in full}
+        candidates += [{**p, "text": p["text"][:PAGE_CHARS]} for p in full]
+        candidates += [h for h in hits if (h["doc_id"], h["page"]) not in done]
+    else:
+        candidates = list(hits)
     blocks, used = [], []
-    for h in hits[:MAX_CHUNKS]:
-        date = dates.get(h["doc_id"], "")
-        head = f"[{h['doc_id']} p.{h['page']}] {h.get('title', '')}" + (f" (publié le {date})" if date else "")
-        candidate = blocks + [f"{head}\n{h['text']}"]
-        msgs = _messages(question, candidate)
-        if gen.count_tokens(msgs) > CONTEXT_TOKENS and blocks:
-            break
+    for h in candidates[:MAX_CHUNKS]:
+        candidate = blocks + [f"{_head(h, dates)}\n{h['text']}"]
+        if gen.count_tokens(_messages(question, candidate)) > CONTEXT_TOKENS:
+            if blocks:
+                continue  # ce bloc ne tient pas : on tente le suivant, plus court
+            candidate = [candidate[0][:6000]]
         blocks, used = candidate, used + [h]
     return _messages(question, blocks), "\n\n".join(blocks), used
 
@@ -115,19 +143,21 @@ def parse_answer(raw: str, used: list[dict]) -> tuple[str, list[dict]]:
         if key in allowed and key not in cits:
             cits.append(key)
     answer = re.sub(r"\s*\[[\w\-]+,?\s*p\.?\s*\d+\]", "", answer).strip()
+    answer = answer.replace("**", "")
     if not cits and used:  # le modèle n'a rien cité de valide : la page la mieux classée
         cits = [(used[0]["doc_id"], used[0]["page"])]
     return answer, [{"doc_id": d, "page": p} for d, p in cits[:5]]
 
 
-def answer_one(gen, item: dict, dates: dict[str, str], tau: float = TAU, check_numbers: bool = True) -> dict:
+def answer_one(gen, item: dict, dates: dict[str, str], tau: float = TAU, check_numbers: bool = True,
+               mode: str = "mixte") -> dict:
     hits = item["hits"]
     pred = {"qid": item["qid"], "answer": "INTROUVABLE", "citations": [], "retrieved": item["retrieved"]}
     gen.start_question(item["qid"])
     if not hits or hits[0]["score"] < tau:
         pred["abstention"] = "seuil"
         return pred
-    msgs, context, used = build_context(gen, item["question"], hits, dates)
+    msgs, context, used = build_context(gen, item, dates, mode)
     raw = gen.chat(msgs, max_new_tokens=220)
     pred["raw"] = raw
     if "INTROUVABLE" in raw.upper():
@@ -145,7 +175,7 @@ def answer_one(gen, item: dict, dates: dict[str, str], tau: float = TAU, check_n
 
 
 def generate(retrieved_path: str, out_path: str, backend: str = "hf", tau: float = TAU,
-             check_numbers: bool = True, run_name: str = "pipeline") -> None:
+             check_numbers: bool = True, run_name: str = "pipeline", mode: str = "mixte") -> None:
     from groundtruth.generator import OfficialGenerator
     from groundtruth.io import write_predictions
 
@@ -154,7 +184,7 @@ def generate(retrieved_path: str, out_path: str, backend: str = "hf", tau: float
     gen = OfficialGenerator(backend=backend)
     preds, t0 = [], time.time()
     for item in items:
-        pred = answer_one(gen, item, dates, tau, check_numbers)
+        pred = answer_one(gen, item, dates, tau, check_numbers, mode)
         preds.append(pred)
         print(f"{pred['qid']}: {pred['answer'][:90]}", flush=True)
     print(f"[generate] {(time.time() - t0) / max(len(preds), 1):.1f} s par question")
