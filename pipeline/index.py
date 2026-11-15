@@ -124,7 +124,7 @@ def update(index_dir: str, pdf_dir: str) -> None:
 
 # ------------------------------------------------------------------ recherche
 class Searcher:
-    def __init__(self, index_dir: str, dense: bool = True, rerank: bool = True):
+    def __init__(self, index_dir: str, dense: bool = True, rerank: bool = True, use_editions: bool = True):
         import bm25s
 
         self.pages, self.chunks, self.emb, self.meta = _load(Path(index_dir))
@@ -133,6 +133,14 @@ class Searcher:
         self.bm25 = bm25s.BM25()
         self.bm25.index([tokenize(c["embed_text"]) for c in self.chunks], show_progress=False)
         self.embedder = load_embedder() if dense else None
+        # éditions successives d'une même publication : doc_id -> édition qui le remplace
+        from . import editions
+
+        self.use_editions = use_editions
+        self.newer = editions.build_series(self.pages, parse.load_dates(), self.chunks, self.emb) if use_editions else {}
+        self.doc_rows: dict[str, list[int]] = {}
+        for i, c in enumerate(self.chunks):
+            self.doc_rows.setdefault(c["doc_id"], []).append(i)
         self.reranker = None
         if rerank:
             from sentence_transformers import CrossEncoder
@@ -172,8 +180,10 @@ class Searcher:
             ids = self.dense(query, k_first)
         else:
             ids = self.rrf([self.lexical(query, k_first), self.dense(query, k_first)])
+        ids = ids[:k_rerank] if self.reranker is not None else ids
+        if self.use_editions and self.embedder is not None:
+            ids = self._with_latest_editions(query, ids)
         if self.reranker is not None and ids:
-            ids = ids[:k_rerank]
             scores = self.reranker.predict([(query, self.chunks[i]["embed_text"]) for i in ids],
                                            batch_size=16, show_progress_bar=False)
             order = np.argsort(-scores)
@@ -181,7 +191,30 @@ class Searcher:
         else:
             scores = [1.0 / (1 + r) for r in range(len(ids))]
         return [{"doc_id": self.chunks[i]["doc_id"], "page": self.chunks[i]["page"],
-                 "text": self.chunks[i]["text"], "score": s} for i, s in zip(ids, scores)]
+                 "text": self.chunks[i]["text"], "score": s,
+                 "superseded_by": self.newer.get(self.chunks[i]["doc_id"], "")} for i, s in zip(ids, scores)]
+
+    def _with_latest_editions(self, query: str, ids: list[int], per_doc: int = 3) -> list[int]:
+        """Palier 3. Si un candidat vient d'une édition remplacée, on ajoute les meilleurs chunks de
+        l'édition la plus récente (souvent mal classée car son vocabulaire a changé). Et si la
+        question demande la dernière donnée, on retire les anciennes éditions des candidats."""
+        from . import editions
+
+        old_docs = {self.chunks[i]["doc_id"] for i in ids} & set(self.newer)
+        if not old_docs:
+            return ids
+        q = embed(self.embedder, [query]).astype(np.float32)[0]
+        present = set(ids)
+        added = []
+        for doc in sorted({self.newer[d] for d in old_docs}):
+            rows = self.doc_rows[doc]
+            scores = self.emb[rows] @ q
+            for j in np.argsort(-scores)[:per_doc]:
+                if rows[int(j)] not in present:
+                    added.append(rows[int(j)])
+        if editions.wants_latest(query):
+            ids = [i for i in ids if self.chunks[i]["doc_id"] not in self.newer]
+        return ids + added
 
 
 def ranked_pages(hits: list[dict]) -> list[dict]:

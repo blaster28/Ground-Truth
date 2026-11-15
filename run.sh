@@ -15,7 +15,8 @@ case "$cmd" in
   update) python -m pipeline update --index-dir "$1" --pdf-dir "$2" ;;
   answer)
     # deux processus : la recherche (embedder + reranker) libère la VRAM avant le générateur
-    hits="${3%.json}.hits.json"
+    mkdir -p runs
+    hits="runs/$(basename "${3%.json}").hits.json"   # fichiers intermédiaires hors du dossier de sortie
     python -m pipeline retrieve --index-dir "$1" --questions "$2" --out "$hits"
     python -m pipeline generate --retrieved "$hits" --out "$3" --backend "${GT_BACKEND:-hf}" ;;
   *) echo "usage: run.sh index|update|answer ..." >&2; exit 1 ;;

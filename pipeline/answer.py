@@ -48,12 +48,12 @@ SYSTEM = (
 
 # ------------------------------------------------------------------ étape 1 : recherche
 def retrieve(index_dir: str, questions_path: str, out_path: str, mode: str = "hybrid",
-             rerank: bool = True) -> None:
+             rerank: bool = True, use_editions: bool = True) -> None:
     from groundtruth.io import load_questions
 
     from .index import Searcher, ranked_pages
 
-    searcher = Searcher(index_dir, dense=mode != "bm25", rerank=rerank)
+    searcher = Searcher(index_dir, dense=mode != "bm25", rerank=rerank, use_editions=use_editions)
     titles = {p["doc_id"]: p.get("title", "") for p in searcher.pages}
     out, t0 = [], time.time()
     for q in load_questions(questions_path):
@@ -61,7 +61,7 @@ def retrieve(index_dir: str, questions_path: str, out_path: str, mode: str = "hy
         for h in hits:
             h["title"] = titles.get(h["doc_id"], "")
         pages = ranked_pages(hits)
-        full = [{**p, "title": titles.get(p["doc_id"], ""),
+        full = [{**p, "title": titles.get(p["doc_id"], ""), "superseded_by": searcher.newer.get(p["doc_id"], ""),
                  "text": searcher.page_text[(p["doc_id"], p["page"])]["text"]} for p in pages[:FULL_PAGES]]
         out.append({"qid": q["qid"], "question": q["question"], "hits": hits[:12],
                     "full_pages": full, "retrieved": pages[:10]})
@@ -96,7 +96,10 @@ def grounded(answer: str, context: str) -> bool:
 
 def _head(h: dict, dates: dict[str, str]) -> str:
     date = dates.get(h["doc_id"], "")
-    return f"[{h['doc_id']} p.{h['page']}] {h.get('title', '')}" + (f" (publié le {date})" if date else "")
+    head = f"[{h['doc_id']} p.{h['page']}] {h.get('title', '')}" + (f" (publié le {date})" if date else "")
+    if h.get("superseded_by"):  # le générateur doit savoir qu'une édition plus récente existe
+        head += f" — ANCIENNE ÉDITION, remplacée par {h['superseded_by']}"
+    return head
 
 
 def build_context(gen, item: dict, dates: dict[str, str], mode: str = "mixte",
@@ -237,7 +240,8 @@ def generate(retrieved_path: str, out_path: str, backend: str = "hf", tau: float
         print(f"{pred['qid']}: {pred['answer'][:90]}", flush=True)
     print(f"[generate] {(time.time() - t0) / max(len(preds), 1):.1f} s par question")
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)
-    debug = Path(out_path).with_suffix(".debug.json")
+    debug = Path("runs") / (Path(out_path).stem + ".debug.json")  # détail des abstentions, pour l'analyse
+    debug.parent.mkdir(parents=True, exist_ok=True)
     debug.write_text(json.dumps(preds, ensure_ascii=False, indent=1), encoding="utf-8")
     clean = [{k: p[k] for k in ("qid", "answer", "citations", "retrieved")} for p in preds]
     write_predictions(out_path, clean, run_name=run_name)
