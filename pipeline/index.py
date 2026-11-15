@@ -86,13 +86,13 @@ def _load(index_dir: Path):
     return pages, chunks, emb, meta
 
 
-def _process(pdf_dir: str, meta: dict, skip: set[str] | None = None):
+def _process(pdf_dir: str, index_dir: Path, meta: dict, skip: set[str] | None = None):
     """Lit, découpe et encode les PDF d'un dossier (hors documents de `skip`)."""
     from . import ocr as ocr_mod
 
     t0 = time.time()
     reader = ocr_mod.LazyOCR(meta["ocr"])
-    pages = parse.read_dir(pdf_dir, ocr=reader, skip=skip)
+    pages = parse.read_dir(pdf_dir, ocr=reader, skip=skip, cache_path=str(index_dir / "ocr_cache.json"))
     reader.close()  # libère la VRAM de l'OCR avant de charger l'embedder
     n_ocr = sum(p["source"] == "ocr" for p in pages)
     print(f"[index] {len(pages)} pages lues dont {n_ocr} par OCR ({time.time() - t0:.0f} s)")
@@ -106,7 +106,7 @@ def _process(pdf_dir: str, meta: dict, skip: set[str] | None = None):
 def build(pdf_dir: str, index_dir: str, strategy: str = "structure", contextual: bool = True,
           ocr: str = "auto") -> None:
     meta = {"embedder": EMBEDDER, "chunking": strategy, "contextual": contextual, "ocr": ocr}
-    pages, chunks, emb = _process(pdf_dir, meta)
+    pages, chunks, emb = _process(pdf_dir, Path(index_dir), meta)
     _save(Path(index_dir), pages, chunks, emb, meta)
 
 
@@ -115,7 +115,7 @@ def update(index_dir: str, pdf_dir: str) -> None:
     idx = Path(index_dir)
     pages, chunks, emb, meta = _load(idx)
     known = {p["doc_id"] for p in pages}
-    new_pages, new_chunks, new_emb = _process(pdf_dir, meta, skip=known)
+    new_pages, new_chunks, new_emb = _process(pdf_dir, idx, meta, skip=known)
     print(f"[update] {len({p['doc_id'] for p in new_pages})} nouveaux documents")
     if not new_pages:
         return

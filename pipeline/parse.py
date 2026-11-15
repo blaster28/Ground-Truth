@@ -25,42 +25,66 @@ def clean_text(text: str) -> str:
 
 def doc_title(doc, first_text: str) -> str:
     """Titre du document : métadonnée PDF si elle est parlante, sinon les premières lignes."""
-    meta = (doc.metadata or {}).get("title") or ""
-    if len(meta) > 15 and not meta.lower().endswith((".pdf", ".indd", ".docx", ".doc")):
-        return meta.strip()
-    lines = [l.strip() for l in first_text.splitlines() if len(l.strip()) > 3]
+    if doc is not None:
+        meta = (doc.metadata or {}).get("title") or ""
+        if len(meta) > 15 and not meta.lower().endswith((".pdf", ".indd", ".docx", ".doc")):
+            return meta.strip()
+        return ""
+    lines = [l.strip(" #*") for l in first_text.splitlines() if len(l.strip(" #*")) > 3]
     return " ".join(lines[:3])[:200]
 
 
-def read_pdf(pdf: Path, ocr=None) -> list[dict]:
+def read_pdf(pdf: Path) -> tuple[list[dict], list, str]:
+    """Pages d'un PDF, et la liste (index dans pages, image) des pages sans couche texte."""
     import pymupdf
 
-    pages = []
+    from .ocr import to_pil
+
+    pages, scans = [], []
     with pymupdf.open(pdf) as doc:
         for i, page in enumerate(doc, 1):
             text = clean_text(page.get_text("text"))
-            source = "texte"
-            if len(text) < MIN_CHARS and ocr is not None:
-                import time
-
-                t0 = time.time()
-                pix = page.get_pixmap(dpi=OCR_DPI)
-                text = clean_text(ocr(pix))
-                source = "ocr"
-                print(f"[ocr] {pdf.stem} p.{i} : {len(text)} caractères, {time.time() - t0:.0f} s", flush=True)
-            pages.append({"doc_id": pdf.stem, "page": i, "text": text, "source": source})
-        title = doc_title(doc, pages[0]["text"] if pages else "")
-    for p in pages:
-        p["title"] = title
-    return pages
+            if len(text) < MIN_CHARS:
+                scans.append((len(pages), to_pil(page.get_pixmap(dpi=OCR_DPI))))
+            pages.append({"doc_id": pdf.stem, "page": i, "text": text, "source": "texte"})
+        meta_title = doc_title(doc, "")
+    return pages, scans, meta_title
 
 
-def read_dir(pdf_dir: str, ocr=None, skip: set[str] | None = None) -> list[dict]:
-    pages = []
+def read_dir(pdf_dir: str, ocr=None, skip: set[str] | None = None, cache_path: str | None = None) -> list[dict]:
+    """Lit tous les PDF du dossier (hors `skip`). Les pages sans texte passent à l'OCR par lots ;
+    `cache_path` mémorise le résultat de l'OCR pour ne jamais refaire une page déjà lue."""
+    cache = {}
+    if cache_path and Path(cache_path).exists():
+        cache = json.loads(Path(cache_path).read_text(encoding="utf-8"))
+    pages, todo, bounds = [], [], []
     for pdf in sorted(Path(pdf_dir).glob("*.pdf")):
         if skip and pdf.stem in skip:
             continue
-        pages.extend(read_pdf(pdf, ocr))
+        doc_pages, scans, meta_title = read_pdf(pdf)
+        bounds.append((len(pages), len(pages) + len(doc_pages), meta_title))
+        for local, image in scans:
+            p = doc_pages[local]
+            key = f"{p['doc_id']}/{p['page']}"
+            if key in cache:
+                p["text"], p["source"] = cache[key], "ocr"
+            elif ocr is not None:
+                todo.append((len(pages) + local, key, image))
+        pages.extend(doc_pages)
+    if todo:
+        def save(start: int, texts: list[str]) -> None:  # cache écrit après chaque lot : rien n'est perdu
+            for (idx, key, _), text in zip(todo[start:], texts):
+                pages[idx]["text"], pages[idx]["source"] = clean_text(text), "ocr"
+                cache[key] = pages[idx]["text"]
+            if cache_path:
+                Path(cache_path).parent.mkdir(parents=True, exist_ok=True)
+                Path(cache_path).write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
+
+        ocr.many([im for _, _, im in todo], [key for _, key, _ in todo], on_batch=save)
+    for start, end, meta_title in bounds:  # le titre se lit après l'OCR (première page scannée)
+        title = meta_title or doc_title(None, pages[start]["text"] if end > start else "")
+        for p in pages[start:end]:
+            p["title"] = title
     return pages
 
 
