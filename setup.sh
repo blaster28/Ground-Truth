@@ -8,7 +8,10 @@ python - <<'PY'
 from huggingface_hub import snapshot_download
 for repo in [
     "mistralai/Ministral-3-3B-Instruct-2512",   # générateur officiel (obligatoire)
-    # ajoute ici tes modèles : "BAAI/bge-m3", "lightonai/LightOnOCR-2-1B", ...
+    "BAAI/bge-m3",                               # embedder (recherche dense)
+    "BAAI/bge-reranker-v2-m3",                   # reranker
+    "lightonai/LightOnOCR-2-1B",                 # OCR des pages numérisées
 ]:
-    snapshot_download(repo)
+    # on évite les copies ONNX / poids en double, inutiles ici
+    snapshot_download(repo, ignore_patterns=["onnx/*", "*.onnx", "*.onnx_data", "pytorch_model.bin", "imgs/*"])
 PY

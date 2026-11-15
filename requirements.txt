@@ -9,5 +9,8 @@ torch>=2.3
 transformers>=5.0
 mistral-common>=1.8.6
 accelerate>=1.0
+# Pipeline (paliers 2 et 3) : embedder, reranker, OCR de secours sur CPU
+sentence-transformers>=5.0
+rapidocr-onnxruntime>=1.4
 # Optionnel : backend "openai" (serveur vLLM / llama.cpp / Ollama local)
 openai>=1.40
