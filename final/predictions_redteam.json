@@ -1,0 +1,1440 @@
+{
+ "run_name": "pipeline",
+ "commit": "",
+ "predictions": [
+  {
+   "qid": "rt1-01",
+   "answer": "En 2024, 11 % des émissions de l'empreinte carbone de la France provenaient de Chine.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2077",
+     "page": 3
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2077",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-transition-ecologique-synthese",
+     "page": 22
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 18
+    }
+   ]
+  },
+  {
+   "qid": "rt1-02",
+   "answer": "1,5 % ou 6,1 millions de tonnes équivalent CO₂",
+   "citations": [
+    {
+     "doc_id": "insee-ip2130",
+     "page": 2
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2130",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-transition-ecologique-synthese",
+     "page": 21
+    }
+   ]
+  },
+  {
+   "qid": "rt1-03",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2117",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2125",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "rt1-04",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2128",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 22
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 19
+    }
+   ]
+  },
+  {
+   "qid": "rt1-05",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2119",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2107",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "rt1-06",
+   "answer": "1,5 %",
+   "citations": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 1
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2057",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2033",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2057",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2111",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2110",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "rt1-07",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2055",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2055",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2055",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2055",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-transition-ecologique-synthese",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 21
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 47
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 74
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 206
+    },
+    {
+     "doc_id": "insee-ip2041",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "rt1-08",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2117",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt1-09",
+   "answer": "371 postes non pourvus et un taux d’inadéquation national de 4,01 % en 2024",
+   "citations": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 62
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 64
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 62
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 63
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 107
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 65
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 135
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 133
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 69
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 83
+    }
+   ]
+  },
+  {
+   "qid": "rt1-10",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2040",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2040",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2040",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt1-11",
+   "answer": "112,6 % du PIB",
+   "citations": [
+    {
+     "doc_id": "insee-ip2106",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 1
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2106",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 16
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 46
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 35
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 81
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 42
+    }
+   ]
+  },
+  {
+   "qid": "rt1-12",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2055",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2055",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2055",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2055",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-transition-ecologique-synthese",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 21
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 47
+    },
+    {
+     "doc_id": "insee-ip2034",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 94
+    }
+   ]
+  },
+  {
+   "qid": "rt1-13",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 180
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 179
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 22
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 178
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 190
+    }
+   ]
+  },
+  {
+   "qid": "rt1-14",
+   "answer": "359 millions de tonnes équivalent CO2",
+   "citations": [
+    {
+     "doc_id": "insee-ip2130",
+     "page": 4
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2130",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 36
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2099",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "rt1-15",
+   "answer": "Lille arrive juste derrière Poitiers avec un taux d'encadrement de 5,6 internes pour un enseignant hospitalo-universitaire en 2024.",
+   "citations": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 74
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 74
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 75
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 145
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 72
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 152
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 100
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 142
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 108
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 66
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 99
+    }
+   ]
+  },
+  {
+   "qid": "rt5-01",
+   "answer": "+1,5 %",
+   "citations": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 1
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2112",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2112",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 53
+    },
+    {
+     "doc_id": "insee-ip2112",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2111",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2092",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "rt5-02",
+   "answer": "Le pouvoir d'achat du revenu disponible brut des ménages français a augmenté de 2,7 % en 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2110",
+     "page": 4
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2110",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2110",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2075",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2110",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2111",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "rt5-03",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 41
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 112
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 91
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 102
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 110
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 170
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 119
+    }
+   ]
+  },
+  {
+   "qid": "rt5-04",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2101",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "rt5-05",
+   "answer": "En 2025, 15,1 % des enfants nés en France ont reçu les noms de leurs deux parents, contre 10,3 % en 2014.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2119",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 2
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2119",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt5-06",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2119",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "rt5-07",
+   "answer": "3 030 euros",
+   "citations": [
+    {
+     "doc_id": "insee-ip2066",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 2
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2066",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2079",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "rt5-08",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2040",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2040",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2040",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2040",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt5-09",
+   "answer": "8,2 % entre 2020 et 2023, puis 7,2 % entre 2021 et 2024",
+   "citations": [
+    {
+     "doc_id": "insee-ip2129",
+     "page": 3
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2129",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2104",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2104",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2104",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "rt5-10",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-vaccination",
+     "page": 88
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 44
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 52
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 43
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 51
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 26
+    }
+   ]
+  },
+  {
+   "qid": "rt5-11",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2127",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2087",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "rt5-12",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2066",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2079",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "rt5-13",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2057",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2074",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2074",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "rt5-14",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2067",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2067",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2067",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "rt5-15",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 27
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 53
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 71
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 67
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 34
+    },
+    {
+     "doc_id": "insee-ip2053",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2053",
+     "page": 2
+    }
+   ]
+  }
+ ]
+}
