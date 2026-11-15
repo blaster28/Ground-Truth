@@ -1,0 +1,155 @@
+{
+ "split": "redteam",
+ "questions": [
+  {
+   "qid": "rt1-01",
+   "question": "Selon l'Insee, quelle part de l'empreinte carbone de la France provenait d'émissions réalisées en Chine en 2024 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt1-02",
+   "question": "Selon la dernière estimation de l'Insee, de combien les émissions de gaz à effet de serre des unités résidentes françaises ont-elles baissé en 2024 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt1-03",
+   "question": "En 2024, quel est le taux de pauvreté des personnes vivant dans un ménage classé « autres types de ménages » dont la personne de référence a 65 ans ou plus ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt1-04",
+   "question": "Début 2024, selon l'enquête Logement de l'Insee, quel taux d'effort net (part des revenus consacrée à la résidence principale, aides au logement déduites) supportent les ménages logés gratuitement ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt1-05",
+   "question": "D'après l'Insee, en 2025, parmi les nouveau-nés reconnus par leurs deux parents dont au moins un parent est né dans un pays de langue portugaise, quelle part porte uniquement le nom de famille du père ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt1-06",
+   "question": "According to Insee's most recent national accounts, by how much did France's GDP grow in volume in 2024?",
+   "lang": "en"
+  },
+  {
+   "qid": "rt1-07",
+   "question": "En 2021, quelle quantité d'ordures ménagères résiduelles a été collectée par habitant en Corse-du-Sud ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt1-08",
+   "question": "Combien de personnes vivaient sous le seuil de pauvreté en France en 2024 en comptant aussi les DROM, les personnes vivant en communautés et les personnes sans domicile ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt1-09",
+   "question": "Combien de postes d'internat sont restés non pourvus à l'issue de la procédure de 2024, et quel a été cette année-là le taux d'inadéquation national ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt1-10",
+   "question": "In early 2024, what share of their income did single people aged 65 or over (household reference person) spend on their main home, net of housing benefits, according to Insee?",
+   "lang": "en"
+  },
+  {
+   "qid": "rt1-11",
+   "question": "Selon les comptes les plus récents de l'Insee, à combien s'élevait la dette publique au sens de Maastricht, en pourcentage du PIB, fin 2024 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt1-12",
+   "question": "En 2021, combien de kilogrammes de déchets ménagers et assimilés par habitant (hors déblais et gravats) ont été collectés dans la région Bretagne ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt1-13",
+   "question": "In 2024, according to the Eurostat figures reported by the Cour des comptes, what share of French tenants paying a reduced rent or housed free of charge were overburdened by housing costs?",
+   "lang": "en"
+  },
+  {
+   "qid": "rt1-14",
+   "question": "Selon l'Insee, combien de millions de tonnes équivalent CO2 ont été émises en 2025 sur le territoire français d'après les inventaires du Citepa au format Secten ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt1-15",
+   "question": "Hors outre-mer, Poitiers a en 2024 le taux d'encadrement des internes le plus dégradé (7,1 internes par enseignant hospitalo-universitaire). Selon le graphique de la Cour des comptes, quelle université arrive juste derrière ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt5-01",
+   "question": "D'après l'estimation la plus récente de l'Insee, quelle a été la croissance du PIB français en volume en 2024 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt5-02",
+   "question": "According to Insee's most recent national accounts, by how much did the purchasing power of French households' gross disposable income increase in 2024?",
+   "lang": "en"
+  },
+  {
+   "qid": "rt5-03",
+   "question": "Selon les chiffres les plus récents de l'Insee, de combien l'investissement total a-t-il reculé en volume en France en 2024 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt5-04",
+   "question": "En 2024, de combien d'euros nets par mois (en équivalent temps plein) le salaire moyen d'un agent de la fonction publique de l'État dépasse-t-il celui d'un salarié de la fonction publique territoriale ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt5-05",
+   "question": "Quelle part des enfants nés en France en 2025 a reçu les noms de famille de ses deux parents, et quelle était cette part en 2014 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt5-06",
+   "question": "En 2025, parmi les nouveau-nés reconnus par leurs deux parents dont au moins un parent est né dans un pays lusophone, quelle part porte le nom de la mère suivi de celui du père ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt5-07",
+   "question": "According to Insee, what was the average monthly net full-time-equivalent salary of staff working for the departmental fire and rescue services (SDIS) in France's territorial civil service in 2024?",
+   "lang": "en"
+  },
+  {
+   "qid": "rt5-08",
+   "question": "Début 2024, quelle part de leurs revenus les personnes vivant seules âgées de 65 ans ou plus consacrent-elles au logement (taux d'effort net), et combien dépensent-elles en moyenne par an pour se loger, aides déduites ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt5-09",
+   "question": "Selon l'Insee, quelle part de la population a connu une situation de pauvreté monétaire continue sur quatre ans entre 2020 et 2023, puis entre 2021 et 2024 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt5-10",
+   "question": "Combien d'officines de pharmacie la Cour des comptes recense-t-elle au 1er janvier 2024 dans son rapport sur la politique de vaccination, et combien l'Insee en dénombrait-il en 2022 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt5-11",
+   "question": "Combien de noms de famille différents ont été transmis aux enfants nés en France en 2025 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt5-12",
+   "question": "En 2024, quel était le salaire net mensuel moyen, en équivalent temps plein, des agents de catégorie A des services départementaux d'incendie et de secours (SDIS) ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt5-13",
+   "question": "Selon l'Insee, combien de millions d'hectolitres de vin la France a-t-elle produits en 2025 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt5-14",
+   "question": "D'après l'Insee, combien un agent de la fonction publique hospitalière gagnait-il en moyenne par mois, net et en équivalent temps plein, en 2025 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "rt5-15",
+   "question": "Selon l'Insee, quelle a été l'évolution du PIB de la France au deuxième trimestre 2026 ?",
+   "lang": "fr"
+  }
+ ]
+}

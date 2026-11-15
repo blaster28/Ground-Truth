@@ -1,0 +1,1423 @@
+{
+ "version": "1.0",
+ "split": "test",
+ "corpus": "v2 (130 documents, corpus/pdf + corpus/pdf_v2)",
+ "pages": "index physique dans le PDF, à partir de 1",
+ "questions": [
+  {
+   "qid": "test-001",
+   "question": "What volume GDP growth for 2024 did Insee report in its annual accounts review published in 2025, and what figure does it give for that same year one year later?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-002",
+   "question": "Are self-employed farmers taxed on actual profits (régime réel) increasingly likely to end the year with no profit or even a loss? Give the trend in that share over the three most recent years published.",
+   "lang": "en"
+  },
+  {
+   "qid": "test-003",
+   "question": "En 2025, de combien ont progressé les DMTO perçus par les départements, d'une part selon le compte des administrations publiques de l'Insee, d'autre part selon le rapport de la Cour des comptes sur les finances publiques locales ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-004",
+   "question": "En 2025, à quel âge en moyenne les fonctionnaires d'État de la catégorie dite « super active » ont-ils pris leur retraite ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-005",
+   "question": "En 2024, combien de contrôles d'exploitations agricoles les services de l'État ont-ils menés dans les huit baies bretonnes touchées par les algues vertes ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-006",
+   "question": "Début 2025, quelle privation est la moins fréquente chez ceux qui sont restés sous le seuil de pauvreté chaque année de 2021 à 2024 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-007",
+   "question": "Combien d'entreprises ont été créées en 2025 dans le commerce et l'artisanat commercial, et quelle est la progression sur un an ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-008",
+   "question": "Selon l'Insee, quelle est l'empreinte carbone de la consommation touristique en France en 2024 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-009",
+   "question": "Pour verdir le parc immobilier de l'État, quel effort annuel serait nécessaire selon la Cour (rapport 2026 sur la transition écologique), et combien y est vraiment consacré chaque année ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-010",
+   "question": "Quel pourcentage des Réunionnais considèrent, en 2025, que l'environnement est la principale préoccupation pour le pays ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-011",
+   "question": "Sur 2017-2025, combien de places offertes aux étudiants en médecine entrant en internat n'ont été prises par personne, et quel pourcentage moyen par an de places perdues cela représente-t-il ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-012",
+   "question": "Pour le tourisme en France en 2019, quel poste émettait le plus de CO2 : se loger, prendre l'avion, les autres déplacements ou le reste des achats ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-013",
+   "question": "Quel poids économique représentent les entreprises qui ont adopté l'IA : quelle part du chiffre d'affaires du champ marchand concentrent-elles d'après les données les plus récentes ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-014",
+   "question": "Quel est le tarif d'une vaccination contre la grippe faite en pharmacie ou par une infirmière, vaccin non compris, comparé au prix d'une consultation chez un généraliste ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-015",
+   "question": "Au deuxième trimestre 2024, comment le nombre de voyages des habitants de métropole vers une autre région ou à l'étranger a-t-il varié par rapport au même trimestre de 2023 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-016",
+   "question": "Pour l'hôpital public et les établissements médico-sociaux publics, quel salaire net moyen mensuel en EQTP l'Insee retenait-il pour 2023 dans sa première publication, et quel chiffre donne-t-il pour cette même année dans l'édition suivante ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-017",
+   "question": "Je prépare une note sur la précarité : en dessous de quel revenu mensuel une personne vivant seule en métropole est-elle considérée comme pauvre (60 % du niveau de vie médian), d'après le chiffre le plus récent de l'Insee ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-018",
+   "question": "D'après la Cour des comptes, combien de postes d'internat en pharmacie ont été offerts dans les subdivisions après les épreuves d'accès au troisième cycle de 2025 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-019",
+   "question": "Pour mieux soutenir au quotidien les missions des médecins traitants (formation, outils, rémunération), quelles recommandations la Cour des comptes formule-t-elle en 2026 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-020",
+   "question": "Quel est le dernier niveau connu des émissions de gaz à effet de serre sur le territoire français au sens de l'inventaire du Citepa, et comment ont-elles évolué sur un an ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-021",
+   "question": "De 2009 à 2025, quelle année l'ANR a-t-elle enregistré son meilleur taux de réussite des projets déposés (tous appels confondus), et à combien s'élevait-il ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-022",
+   "question": "Quel est le nombre d'unités mixtes de recherche installées sur le site universitaire bordelais ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-023",
+   "question": "D'après la Cour des comptes, combien coûtait au total la formation du troisième cycle des études de médecine en 2012 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-024",
+   "question": "En 2025, combien de petites filles ont reçu le prénom Marie ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-025",
+   "question": "Les deux études de l'Insee sur la pauvreté monétaire qui s'installe dans la durée (2021-2024) et sur les privations qui persistent (2022-2025) pointent-elles les mêmes publics à risque ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-026",
+   "question": "Combien de terrains de foot, rugby et autres grands jeux le recensement national Data-ES comptait-il en octobre 2025 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-027",
+   "question": "Selon l'Insee Première consacré aux étrangers vivant en France en 2024, dans quelle proportion les personnes venues de Chine pour s'installer en France sont-elles devenues françaises, et pourquoi est-ce relativement rare ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-028",
+   "question": "D'ici quand la Cour souhaite-t-elle que les contrôleurs de l'environnement puissent consulter librement et sans payer les fichiers d'identification du bétail, élevages porcins et avicoles compris ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-029",
+   "question": "Parmi l'énergie, l'agroalimentaire, la chimie et la métallurgie, quel secteur consacre en 2024 la plus petite part de son budget environnemental aux renouvelables ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-030",
+   "question": "Les comptes de la sécurité sociale (au sens de la comptabilité nationale) étaient-ils excédentaires en 2024, et l'estimation de ce solde a-t-elle changé entre les comptes publics publiés par l'Insee en 2025 et en 2026 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-031",
+   "question": "Combien l'État compte-t-il récupérer en 2026 en rognant le crédit d'impôt recherche d'après le rapport de la Cour sur les finances publiques 2026, et quel seuil ce dispositif devrait-il franchir en 2025 selon son rapport sur les liens entre laboratoires publics et entreprises ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-032",
+   "question": "Pour mieux connaître et fiabiliser la collecte de la taxe sur les transactions financières, que recommande la Cour des comptes aux ministres de l'économie et des comptes publics ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-033",
+   "question": "Parmi les jeunes qui ont eu leur bac en 2022 et habitaient dans le bassin d'emploi parisien, quelle proportion a quitté cette zone pour poursuivre ses études supérieures ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-034",
+   "question": "D'où vient l'insécurité juridique que la Cour des comptes reproche à l'expérimentation de l'encadrement du niveau des loyers ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-035",
+   "question": "Les décisions fiscales et sociales prises pour 2024 ont-elles fait monter ou baisser les impôts et cotisations ? De combien, selon les comptes publics de l'Insee parus en mai 2025 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-036",
+   "question": "De quel revenu mensuel médian disposent les personnes qui ne sont jamais sorties de la pauvreté entre 2021 et 2024 (en euros de 2024) ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-037",
+   "question": "Au début de 2024, quelle proportion de foyers dit avoir changé sa façon de consommer l'énergie dans son logement (chauffage, eau chaude) à cause de la flambée des tarifs ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-038",
+   "question": "D'après le recensement 2022, combien précisément de personnes en emploi ou cherchant un emploi sont venues de l'étranger s'installer en métropole en 2021 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-039",
+   "question": "Quel montant a été versé pour le programme Breizh Bocage au titre de la prévention dans le deuxième plan algues vertes (2017-2021) ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-040",
+   "question": "Pour la programmation 2023-2029, dans le décompte des aides agricoles jugées favorables à l'environnement et au climat, quel montant la Cour attribue-t-elle à la France pour le soutien aux zones à handicap naturel (mesure O.12), et quelle proportion du volet développement rural cela fait-il ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-041",
+   "question": "En 2024, combien gagnent en moyenne chaque mois grâce à leur activité les indépendants du conseil en gestion d'entreprise, sans compter les micro-entrepreneurs ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-042",
+   "question": "En 2025, quel volume de gaz à effet de serre est lié aux biens que la France vend à l'étranger, y compris ceux qu'elle a importés puis réexpédiés ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-043",
+   "question": "En 2021, quel pourcentage des personnes couvertes par la mutuelle publique gratuite ou à petit prix réservée aux ménages modestes avaient déclaré un médecin traitant ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-044",
+   "question": "En 2025, quelle spécialité médicale a été la plus disputée par les futurs internes, à en juger par la place médiane des admis, et quelle était cette place ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-045",
+   "question": "Combien doit rapporter en 2026 la possibilité de porter de 4,5 % à 5 % le taux maximal des « frais de notaire » perçus par les départements (DMTO) selon le rapport de la Cour sur la situation des finances publiques, et de combien les recettes de ces droits ont-elles augmenté en 2025 pour les collectivités selon le rapport sur les finances publiques locales ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-046",
+   "question": "En 2024, combien de procédures de conciliation ont été ouvertes par le tribunal de commerce de Lyon ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-047",
+   "question": "Selon le compte provisoire de l'agriculture pour 2025 (arrêté en juin 2026), combien vaut la production de volailles et d'œufs en 2025 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-048",
+   "question": "D'après les comptes du commerce de l'Insee, comment le nombre d'entreprises commerciales tombées en faillite a-t-il évolué en 2024, puis en 2025 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-049",
+   "question": "Je m'intéresse aux finances locales : pour quelles raisons la Cour des comptes veut-elle que le DILICO, ce mécanisme de lissage des recettes des collectivités, soit prolongé au-delà de 2026 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-050",
+   "question": "Combien perd sur sa retraite un fonctionnaire d'État qui a passé une décennie à mi-temps, et combien peut perdre un salarié du privé dans le même cas ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-051",
+   "question": "Entre 2004 et 2008, combien d'années d'espérance de vie à la naissance séparaient les 5 % d'hommes les plus modestes des 5 % les plus aisés ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-052",
+   "question": "Par hectare, combien la France met-elle dans les mesures écologiques du volet développement rural de la politique agricole européenne, comparé à ce que fait l'Italie ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-053",
+   "question": "According to the most recent survey on digital technology use in businesses, what share of companies based in mainland France (France hexagonale) with at least ten employees use AI tools?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-054",
+   "question": "Dans son rapport de juillet 2026 sur les finances publiques locales, quelles recommandations la Cour des comptes adresse-t-elle à l'État sur la manière d'associer les collectivités au redressement des comptes publics et sur la répartition de leurs ressources ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-055",
+   "question": "En 2025, combien les grandes villes de 100 000 habitants et plus ont-elles dépensé pour faire tourner leurs services au quotidien ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-056",
+   "question": "Quelles dépenses expliquent l'aggravation du déficit public de la France en 2025 par rapport à 2024 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-057",
+   "question": "Which region received the most contract-based payments for environmentally and climate-friendly farming practices under the 2023 CAP (PAC) campaign, and how much did it get?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-058",
+   "question": "En 2024, combien les administrations publiques ont-elles dépensé pour la seule justice (les tribunaux) au sein de la fonction « ordre et sécurité publics » ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-059",
+   "question": "Combien de personnes salariées travaillant pour la voiture exerçaient en 2023 dans le négoce entre entreprises du secteur auto lui-même ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-060",
+   "question": "En 2024, à quel âge en moyenne les femmes fonctionnaires civiles de l'État (y compris catégories actives) ont-elles liquidé leur pension, comparé à celles du régime général des salariés ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-061",
+   "question": "In 2025, how many babies died before their first birthday in France, and what infant mortality rate does that correspond to?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-062",
+   "question": "Pour que l'argent public consacré aux vaccins soit mieux employé, quels changements la Cour des comptes attend-elle de l'autorité sanitaire qui émet les avis vaccinaux ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-063",
+   "question": "Le compte d'affectation spéciale Pensions a été créé en 2006 : combien a-t-il dépensé en tout cette année-là ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-064",
+   "question": "Selon le Quantum Index Report 2025 du MIT cité par la Cour, combien de brevets en technologies quantiques la Chine a-t-elle enregistrés en 2024 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-065",
+   "question": "Constructeurs et équipementiers : quels vents contraires gênaient leur activité dans l'Hexagone en 2023 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-066",
+   "question": "En examinant les comptes 2025 des services de la présidence, sur quels sujets touchant au personnel la Cour des comptes estime-t-elle qu'il faut rester attentif ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-067",
+   "question": "D'après l'enquête Insee de 2022 sur les déchets non dangereux, quelle part de leurs déchets triés et de leurs déchets mélangés les établissements de 500 salariés ou plus arrivent-ils à valoriser, tous secteurs confondus ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-068",
+   "question": "D'après la Cour des comptes, quand les organismes qui collectent les cotisations sociales ont laissé du temps aux entreprises pour payer en 2024, quelle proportion de la somme étalée (indépendants exclus) est allée aux sociétés de taille moyenne, sans compter les toutes petites structures ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-069",
+   "question": "Dans l'édition 2024 de l'appel France 2030 « Recherches à risque », combien l'INSERM a-t-il obtenu ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-070",
+   "question": "How many times did farmers correct their EU subsidy applications in 2024 by invoking their right to make a mistake (droit à l'erreur)?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-071",
+   "question": "Pour quelles raisons la Cour des comptes juge-t-elle que la Présidence de la République respecte désormais les textes en matière de logements concédés ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-072",
+   "question": "Le salaire net moyen en EQTP des agents des collectivités territoriales pour 2023 a-t-il été modifié entre la publication consacrée à 2023 et celle consacrée à 2024 ? Précisez la valeur d'origine et l'ampleur de la correction.",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-073",
+   "question": "Lors de la campagne PAC 2023, quel pourcentage des agriculteurs espagnols a touché l'éco-régime ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-074",
+   "question": "Pourquoi de moins en moins de foyers se chauffent-ils au mazout depuis une quinzaine d'années, d'après la statistique publique ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-075",
+   "question": "Selon l'Insee (enquêtes Emploi 2023-2024), à diplôme, âge, sexe et statut migratoire égaux, de combien un micro-entrepreneur a-t-il moins de chances qu'un salarié de grimper socialement ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-076",
+   "question": "Pour les habitants de métropole en 2025, quelle part juge que les conflits et rivalités entre États sont la priorité numéro un du pays ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-077",
+   "question": "En 2025, quand ni le père ni la mère n'ont de travail, quelle proportion des enfants reconnus par les deux parents porte les deux noms de famille ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-078",
+   "question": "Dans son bilan des comptes publics, de combien la Cour estime-t-elle que les remboursements et aides liés à la maladie ont augmenté en volume en 2025 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-079",
+   "question": "According to the Cour des comptes report on the ecological transition, how far did Green Fund (Fonds vert) appropriations in the initial finance act (loi de finances initiale) drop in 2025, and according to its report on local government finances, how much in Green Fund commitment authorizations (autorisations d'engagement) was actually executed in 2025?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-080",
+   "question": "According to Insee, in 2022, what was the most earned (income subject to social contributions) by the lowest-paid quarter of pharmacy owners running their pharmacy as sole proprietors?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-081",
+   "question": "Après les épreuves nationales de fin de deuxième cycle de médecine en 2024, dans quelle faculté les étudiants sont-ils le plus souvent restés sur place pour leur internat, et dans quelle proportion ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-082",
+   "question": "Depuis 1998 et jusqu'en 2024, lequel des trois grands pans du commerce (grossistes, magasins de détail, garages et concessions auto) a le moins gagné d'emplois salariés, hors travail temporaire ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-083",
+   "question": "En 2024, parmi les ménages des départements frontaliers qui ont fait des achats en Suisse, combien de paiements par carte y effectuaient-ils en moyenne sur l'année, et quel était le ticket moyen ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-084",
+   "question": "En 2023, combien d'équipements sportifs compte-t-on pour 10 000 habitants en Île-de-France, et en Bourgogne-Franche-Comté ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-085",
+   "question": "En 2024, combien d'entreprises ont utilisé l'avantage « jeunes docteurs » du crédit d'impôt recherche pour un seul docteur recruté, et, toutes entreprises confondues, quel coût moyen par docteur est déclaré ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-086",
+   "question": "En 2023, hors Mayotte, quelle part des enfants mineurs vivant seuls avec leur papa sont à l'étroit dans un logement surpeuplé ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-087",
+   "question": "Combien de travaux d'évaluation de la déclinaison nationale de la PAC sont prévus en France sur 2025-2027, et quel budget est envisagé, selon la Cour des comptes ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-088",
+   "question": "Entre 2016 et 2022, quelle année le revenu moyen des patrons de pharmacie a-t-il chuté le plus en euros constants ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-089",
+   "question": "Lors du recalcul méthodologique des salaires 2023 dans la fonction publique (meilleure mesure des durées de contrat et des équivalents temps plein), quel versant a vu son salaire net moyen 2023 le plus revu à la baisse ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-090",
+   "question": "Dans le modèle statistique de l'Insee expliquant les tonnages de déchets ramassés auprès des ménages en 2021, combien de kilos par habitant ajoute le fait qu'une intercommunalité soit située sur la côte ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-091",
+   "question": "En 2015, combien la France comptait-elle d'équipements sportifs, sans compter ceux dédiés aux sports de nature ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-092",
+   "question": "Quel a été le coût du voyage du Président de la République au sommet du G7 de 2025 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-093",
+   "question": "Début 2025, quelle difficulté financière est plus fréquente chez ceux qui ont alterné entre pauvreté et non-pauvreté sur 2021-2024 que chez ceux restés pauvres tout le temps ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-094",
+   "question": "Selon l'Insee, combien de résidences principales se chauffaient encore au fioul en 2022, et selon la Cour des comptes, depuis quand est-il interdit d'installer de nouvelles chaudières fonctionnant principalement au fioul ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-095",
+   "question": "Pour freiner la surspécialisation des futurs médecins et améliorer l'accès à l'internat, quelles mesures la Cour des comptes préconise-t-elle dans son rapport sur le troisième cycle des études de médecine ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-096",
+   "question": "Sur l'e-boutique de produits dérivés de la présidence française, quelle commission en pourcentage du chiffre d'affaires HT le prestataire reverse-t-il au palais ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-097",
+   "question": "Début 2025, en France hors outre-mer, combien de personnes, en effectif, se trouvaient en situation de privation matérielle et sociale ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-098",
+   "question": "En 2022, parmi les 18-64 ans ayant des difficultés à la fois en français écrit et en calcul (hors étudiants, retraités et personnes inaptes au travail), quelle part ne travaille pas et ne cherche pas d'emploi ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-099",
+   "question": "Côté commerce extérieur, la ferme France était-elle excédentaire en 2025 ? Je voudrais le montant de ses ventes et de ses achats de produits de la terre et la balance, d'après les comptes provisoires du secteur.",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-100",
+   "question": "Pour quelles raisons la Cour des comptes estime-t-elle que les laboratoires associant organismes nationaux de recherche et universités sont mal pilotés, sur le plan scientifique comme financier ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-101",
+   "question": "En 2022, quel pourcentage des entreprises installées en France disait recourir à au moins une technologie d'intelligence artificielle ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-102",
+   "question": "Sur la période 2012-2016, quelle était la longévité attendue à la naissance pour un homme figurant parmi les 5 % les plus riches ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-103",
+   "question": "Parmi les micro-entrepreneurs inscrits au premier semestre 2018 et encore actifs fin 2023, quel secteur réalise le chiffre d'affaires moyen le plus élevé en 2023, et combien ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-104",
+   "question": "En 2025, combien gagnent en moyenne par mois grâce à leur activité les non-salariés classiques (micro-entrepreneurs exclus) ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-105",
+   "question": "À part le CNRS, quel grand organisme public de recherche revient le plus souvent parmi les tutelles des laboratoires mixtes ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-106",
+   "question": "Au sens de l'Insee, une fois retranchés les dépôts, crédits et titres qu'elles détiennent, quel est l'endettement des collectivités et autres organismes publics locaux au 31 décembre 2025 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-107",
+   "question": "Les quelque 660 M€ d'engagements consacrés au quantique et suivis par le secrétariat général pour l'investissement prennent-ils plutôt la forme d'aides à fonds perdus ou de prêts à rembourser, et dans quelles proportions ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-108",
+   "question": "Pour 2024, quelle baisse de la valeur ajoutée brute au coût des facteurs par actif (ou par emploi) de la branche agricole, en termes réels, l'Insee retient-il dans sa dernière estimation ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-109",
+   "question": "Le salaire net mensuel moyen en équivalent temps plein des agents civils de la fonction publique de l'État pour l'année 2023 a-t-il été corrigé par l'Insee après sa première publication ? Quel montant avait d'abord été annoncé et dans quel sens a-t-il été revu ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-110",
+   "question": "En 2025, quel est le solde, au sens de la comptabilité nationale, des communes, départements, régions et intercommunalités, et de combien s'est-il redressé par rapport à 2024 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-111",
+   "question": "Je m'intéresse au fait que les futurs médecins font l'essentiel de leurs stages d'internat dans les CHU : quelles causes la Cour des comptes avance-t-elle pour expliquer ce déséquilibre territorial ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-112",
+   "question": "In the Cour des comptes' June 2026 report on public finances, what inflation rate for 2026 was the International Monetary Fund forecasting in April 2026?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-113",
+   "question": "Entre 2010 et 2023, quelle année les aides directes versées aux exploitants ont-elles pesé le plus lourd par rapport au revenu qu'ils dégagent avant impôt, et à quel pourcentage ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-114",
+   "question": "Le déficit public de 2024 a-t-il été corrigé entre les comptes des administrations publiques 2024 et 2025 de l'Insee ? Indiquez les deux montants et l'écart.",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-115",
+   "question": "Cotisations, départs anticipés, présentation budgétaire : quelles évolutions la Cour des comptes préconise-t-elle en 2026 pour le régime de pension des agents titulaires de l'État ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-116",
+   "question": "Martinique, 2024 : quel pourcentage de la population vit sous le seuil de pauvreté monétaire ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-117",
+   "question": "At the end of 2024, what was the average age of employees across the French public service (fonction publique) as a whole?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-118",
+   "question": "Pour l'habitant situé au milieu de l'échelle des revenus en métropole, le gain de pouvoir d'achat enregistré en 2023 a-t-il été réévalué par l'Insee un an plus tard ? Donnez la première et la nouvelle estimation.",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-119",
+   "question": "Début février 2026, combien de laboratoires associant universités et organismes de recherche (unités mixtes) existaient en France, sur combien de structures de recherche publique au total ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-120",
+   "question": "Fin 2025, quel était le montant du patrimoine économique national de la France ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-121",
+   "question": "Selon les rapports de la Cour des comptes, en 2024, l'assurance maladie a-t-elle plus dépensé pour le forfait versé aux médecins traitants selon leur patientèle ou pour rembourser les vaccins ? De combien ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-122",
+   "question": "Reste-t-on plus longtemps pauvre aujourd'hui qu'à la fin des années 2000 ? Que montre le suivi des mêmes personnes sur quatre ans réalisé par l'Insee ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-123",
+   "question": "Lors de son suivi en 2026 de l'évaluation de 2021 sur les algues vertes en Bretagne, quelles recommandations ou pistes d'action la Cour a-t-elle jugées pas du tout appliquées ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-124",
+   "question": "D'après les bilans démographiques 2024 et 2025 de l'Insee, la fécondité de 2024 a-t-elle été revue ? Donnez les deux chiffres.",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-125",
+   "question": "Parmi les grands équipements sportifs aidés par l'agence nationale du sport de 2020 à 2025, quelle proportion des dossiers était portée par des intercommunalités de type communauté de communes ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-126",
+   "question": "In 2023, what was the average net monthly full-time-equivalent pay of radiographers, lab technicians and other medical-technical staff in public hospitals?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-127",
+   "question": "En 2023, quel chiffre d'affaires total les bars et autres débits de boissons ont-ils réalisé en France ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-128",
+   "question": "Les foyers les moins aisés ont vu leurs ressources remonter en 2024 sans que la proportion de pauvres ne recule : comment l'Insee l'explique-t-il ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-129",
+   "question": "How many households had opted for the Tempo option of EDF's regulated electricity tariff on the Enedis network at the end of 2024, and how many at the start of 2021?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-130",
+   "question": "En 2025, comment expliquer que le nombre de sociétés créées en France ait baissé pendant que celui des micro-entrepreneurs immatriculés augmentait ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-131",
+   "question": "En 2025, quel élément du revenu a le plus tiré vers le haut le pouvoir d'achat du revenu disponible brut par unité de consommation des ménages ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-132",
+   "question": "Parmi les auto-entrepreneurs qui avaient réellement une activité en 2018, combien tiennent encore cinq ans après ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-133",
+   "question": "De 2018 à 2025, quel montant total l'État a-t-il déboursé pour rémunérer, via des mises en concurrence, les acteurs capables de réduire leur demande d'électricité à la demande du réseau ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-134",
+   "question": "Did Insee record a fall in the greenhouse gas emissions of the French economy in 2025, and if so by how much? And what annual rate of reduction does the new national climate strategy (the third of its kind) require, according to the Cour des comptes?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-135",
+   "question": "Entre 2020 et 2025, combien de piscines situées en Corse l'Agence nationale du sport a-t-elle subventionnées ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-136",
+   "question": "In 2022, how many tonnes of avoidable biowaste were generated by hotels, restaurants and cafés with at least 20 employees?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-137",
+   "question": "Selon la Cour des comptes, quelles règles de gestion des chercheurs publics freinent leur collaboration avec les entreprises ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-138",
+   "question": "Dans l'annexe du rapport de la Cour sur la PAC qui détaille par produit la balance agroalimentaire de la France, d'après les travaux de V. Chatellier (INRAE), quelle catégorie affiche le déficit le plus lourd ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-139",
+   "question": "L'Insee a-t-il corrigé la croissance en volume de la valeur ajoutée des services marchands non financiers en 2024 entre son compte des services de 2024 et celui de 2025 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-140",
+   "question": "Dans son rapport sur la coopération entre laboratoires publics et entreprises, combien de sociétés la Cour dit-elle profiter du crédit d'impôt pour la recherche collaborative, et pour quel montant (dernier chiffrage connu) ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-141",
+   "question": "En 2023, quelle part des fonds du second pilier de la PAC revenait à la France, et comment cela se comparait-il au premier pilier ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-142",
+   "question": "Pour quelles raisons la Cour estime-t-elle que chaque action du plan de transformation écologique de l'État dispose déjà d'un financement prévisionnel ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-143",
+   "question": "En 2025, parmi les bébés ayant au moins un parent né dans un pays de langue portugaise, quelle proportion porte seulement le nom de famille paternel ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-144",
+   "question": "During the summer 2024 Olympic Games (July to September), by how much did visits from residents of other French regions to the Paris-region museums and sites covered by the study fall compared with the same quarter of 2023?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-145",
+   "question": "Au troisième trimestre 2024, combien un adulte dépensait-il par jour au restaurant ou au café lors d'une sortie à la journée liée aux Jeux olympiques et paralympiques, et quelle différence avec l'ensemble des sorties à la journée du trimestre ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-146",
+   "question": "In 2025, among people who have been in material and social deprivation continuously since 2022, what share say they cannot afford a car?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-147",
+   "question": "Quand la Cour a vérifié si les différentes zones de loyers des observatoires locaux se distinguaient vraiment les unes des autres sur le plan statistique, combien de couples de zones se sont avérés impossibles à différencier ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-148",
+   "question": "De 2021 à 2025, comment ont évolué les crédits verts de l'État (au sens strict, sans ses opérateurs), en euros et en proportion de la richesse nationale ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-149",
+   "question": "Quelle fraction de ses dépenses d'équipement l'État et les autres administrations ont-ils orientée vers la baisse des émissions en 2021, puis en 2024 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-150",
+   "question": "D'après les données les plus récentes, quelle part des gaz à effet de serre de l'empreinte carbone de la France est émise en Chine ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-151",
+   "question": "Pour quelqu'un qui se met à son compte hors agriculture sans opter pour la micro-entreprise, quelle activité est la moins lucrative en moyenne d'après la dernière étude de l'Insee, et combien rapporte-t-elle par mois ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-152",
+   "question": "Selon la Cour, quand le PIB progressait de 1 % en 2024, de combien les impôts et cotisations augmentaient-ils en proportion ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-153",
+   "question": "Parmi les bacheliers de 2019, quelle part a quitté sa zone d'emploi pour poursuivre ses études dans le supérieur ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-154",
+   "question": "Parmi les huit baies bretonnes suivies pour les marées vertes, quelles deux reçoivent à elles seules plus de 70 % des échouages en moyenne, et avec quelles parts ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-155",
+   "question": "Quelle proportion des entreprises d'au moins 250 salariés recourt à l'IA en 2025 selon l'Insee, et quel objectif d'adoption de l'IA pour les grandes entreprises en 2030 le plan « Osez l'IA » fixe-t-il, d'après la réponse du ministère jointe à l'audit flash de la Cour sur l'IA et le ministère de la culture ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-156",
+   "question": "En 2025, combien de communes n'arrivaient plus à mettre d'argent de côté une fois leurs remboursements de dette payés ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-157",
+   "question": "D'après les deux derniers bilans démographiques de l'Insee, combien de couples se sont mariés en 2024 puis en 2025, et quel écart cela fait-il ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-158",
+   "question": "Début 2026, combien de carnets de vaccination numériques avaient été ouverts sur le site privé mesvaccins.net ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-159",
+   "question": "Les enseignes de fast-food ont-elles beaucoup recruté ? Quel a été le rythme annuel moyen de hausse de leurs effectifs salariés entre 2016 et 2022 dans les commerces accueillant les particuliers ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-160",
+   "question": "Entre 2015 et 2021, depuis quel pays limitrophe au nord ou à l'est de la France le nombre annuel de personnes actives venues s'installer côté français a-t-il le plus augmenté, et de combien ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-161",
+   "question": "Combien coûterait en plus à l'État une remontée persistante d'un demi-point des taux auxquels il emprunte sur les marchés, au bout d'un an puis au bout de dix ans ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-162",
+   "question": "Quelle facture hospitalière la grippe représente-t-elle en moyenne par an selon la Cour, et dans quelle fourchette ce montant fluctue-t-il selon les saisons ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-163",
+   "question": "What was Germany's infant mortality rate in 2024?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-164",
+   "question": "Je cherche à comprendre la baisse des effectifs de contractuels dans la fonction publique en 2024 : qu'est-ce qui l'explique ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-165",
+   "question": "Les centrales qui achètent pour le compte des enseignes ont-elles vraiment retrouvé des couleurs en 2024 côté quantités écoulées, d'après les comptes révisés de l'Insee ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-166",
+   "question": "Quelle part du budget voyages de la direction qui organise les déplacements présidentiels va aux destinations hors d'Europe, outre-mer compris ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-167",
+   "question": "En 2024-2025, en moyenne, combien de collèges publics sur cent ont fait l'impasse sur la campagne vaccinale ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-168",
+   "question": "In 2024, which environmental objective did French industry spend the most on in studies carried out ahead of an investment?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-169",
+   "question": "En 2023, comment a varié la dépense d'énergie des usines fabriquant des matériels de transport ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-170",
+   "question": "Dans le budget 2027, que doit devenir selon la Cour le dispositif de lissage des recettes des collectivités introduit en 2025 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-171",
+   "question": "Début 2024, quelle part des locataires trouve son logement trop cher selon l'Insee, et combien de locataires du parc privé sont concernés par l'expérimentation de l'encadrement des loyers selon la Cour des comptes ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-172",
+   "question": "Sur quelle superficie cultivée des secteurs côtiers touchés par les ulves la Cour s'appuie-t-elle pour ramener à l'unité de surface l'effort de prévention annuel du troisième programme breton (2022-2027) ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-173",
+   "question": "En 2025, quelle progression de la valeur ajoutée agricole au coût des facteurs par actif (ou par emploi), en termes réels, l'Insee prévoyait-il dans son compte prévisionnel, puis dans son compte provisoire ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-174",
+   "question": "En 2021, combien les entreprises de la filière bois ont-elles réalisé de chiffre d'affaires au total ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-175",
+   "question": "Why does the Cour des comptes reject making research teams apply for European funding before they can seek national funding?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-176",
+   "question": "Entre 2021 et 2024, dans quel grand volet thématique du programme-cadre européen de recherche la France a-t-elle décroché le plus d'argent, et combien ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-177",
+   "question": "Les habitants des zones frontalières vont souvent faire le plein ou acheter des cigarettes de l'autre côté : en 2024, dans quel pays voisin ces deux types de commerces pèsent-ils le moins dans leurs paiements par carte en magasin ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-178",
+   "question": "Fin 2022, quelle part de l'offre de soins hospitaliers à la maison des cliniques à but lucratif est contrôlée par les 9 premiers groupes ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-179",
+   "question": "Dans le comparatif européen des taxes sur les transactions financières dressé par la Cour, à quel taux s'applique la stamp duty en Irlande ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-180",
+   "question": "How did company start-ups (créations de sociétés) in the information and communication sector change in 2025 compared with the previous year?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-181",
+   "question": "Combien de bébés de moins de deux ans ont dû être hospitalisés pour une bronchiolite due au VRS pendant la saison 2022-2023 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-182",
+   "question": "Combien a rapporté en 2025 le prélèvement temporaire sur les profits des très grandes sociétés, et quelle part de l'argent apporté par les impôts créés récemment cela représente ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-183",
+   "question": "Combien les ménages ont-ils dépensé en cigarettes et autres produits du tabac en 2024, en euros ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-184",
+   "question": "Entre 2014 et 2024, quel avantage fiscal destiné à pousser les entreprises à travailler avec les laboratoires publics a coûté le plus cher à l'État, et combien ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-185",
+   "question": "Sur 2020-2024, autour de 2 000 € de niveau de vie mensuel, combien d'années de longévité supplémentaire vont avec 100 € de niveau de vie en plus par mois, pour une femme et pour un homme ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-186",
+   "question": "Combien a rapporté en 2024 au Royaume-Uni la stamp duty sur les achats d'actions ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-187",
+   "question": "Entre 2016 et 2022, dans les grandes zones commerciales à la sortie des villes, quel type de commerce a le plus augmenté ses effectifs salariés en boutique chaque année en moyenne ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-188",
+   "question": "Lors de la première campagne d'immunisation contre le papillomavirus organisée dans les établissements scolaires en 2023-2024, comment la proportion de garçons de 12 ans ayant eu au moins une piqûre a-t-elle évolué ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-189",
+   "question": "En 2018, le nombre de maladies contre lesquelles les bébés doivent obligatoirement être vaccinés est passé de combien à combien ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-190",
+   "question": "Si la trajectoire de la loi de programmation de la recherche est tenue (1,7 Md€ d'engagements par an dès 2027), combien l'État devra-t-il financer au total pour l'ANR entre 2027 et 2031, selon la Cour des comptes ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-191",
+   "question": "Between 2023 and 2024, how did the average spend per purchase change for residents of French border departments buying from tobacconists in Italy?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-192",
+   "question": "According to the Cour des comptes auditors, by what percentage did staff costs rise between 2020 and 2025 at the agency that funds research through calls for proposals?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-193",
+   "question": "Fin 2025, quel est le montant total des ressources propres non dépensées accumulées par l'ensemble des UMR ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-194",
+   "question": "En 2021, dans les petites villes, quelle part du sol transformé par l'homme est couverte par des bâtiments ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-195",
+   "question": "Combien de dossiers ont été déposés pour les aides PAC en 2024, et quel recul cela représente par rapport à 2016 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-196",
+   "question": "En 2022, de combien de points la marge des pharmacies sur leurs ventes est-elle en dessous de celle des magasins de détail en général ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-197",
+   "question": "Selon la Cour, quelle proportion de la surface agricole utile française était en 2021 en zone vulnérable aux nitrates, et quelle part des surfaces d'échouage des marées vertes en France se trouvait en Bretagne en 2024 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-198",
+   "question": "L'Agence nationale de la recherche risquant une impasse de financement d'ici fin 2028, quelles mesures budgétaires la Cour des comptes recommande-t-elle à l'agence et à ses tutelles ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-199",
+   "question": "Quelle proportion des 65 ans et plus s'était fait vacciner contre la grippe pendant la saison 2010-2011 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-200",
+   "question": "En 2021, combien de kilos de déchets ménagers et assimilés ont été ramassés par habitant en Martinique ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-201",
+   "question": "Pour quand les magistrats financiers veulent-ils que chaque laboratoire mixte université-organisme ait des comptes consolidés et un plan pour augmenter ses ressources propres ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-202",
+   "question": "Pour quelles raisons la Cour des comptes conseille-t-elle d'augmenter le nombre d'UMR afin d'assurer une meilleure couverture du territoire ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-203",
+   "question": "Entre ce qu'elle paie et ce qu'elle touche au titre des subventions agricoles de Bruxelles, combien la France gagne-t-elle net chaque année, d'après les magistrats financiers ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-204",
+   "question": "En 2024, quelle proportion des dépenses de défense des administrations correspond aux armées à proprement parler, et quel montant ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-205",
+   "question": "Quel pays de l'Union reçoit la plus grosse enveloppe prévue dans les plans nationaux de la politique agricole commune (FEAGA et FEADER) pour 2023-2027 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-206",
+   "question": "En 2024, combien d'hectares l'opérateur foncier rural breton a-t-il attribués près des sièges de ferme dans les baies à algues vertes, par rapport à son objectif annuel ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-207",
+   "question": "L'Insee avait d'abord annoncé un excédent record des échanges extérieurs de services marchands pour 2024. À combien ce solde de 2024 est-il estimé après révision des comptes ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-208",
+   "question": "En 2023, parmi les organismes de recherche publics de statut scientifique et technologique, lequel tirait le plus de ressources du privé en proportion de son effort de recherche ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-209",
+   "question": "En 2020, quel secteur des services aux entreprises et aux particuliers (finance exclue) a le plus pesé dans l'effondrement de leur production de richesse, à prix constants ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-210",
+   "question": "How much did France's Social Security and other social security bodies owe at 31 December 2025, in gross debt as defined under the European treaties?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-211",
+   "question": "En 2024, dans quelle grande branche du commerce les faillites ont-elles le plus progressé, et de combien ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-212",
+   "question": "Dans le scénario le plus coûteux envisagé par la Cour, jusqu'où pourrait monter le total de l'argent public versé depuis 2018 aux effacements par les appels d'offres AOE/AOFD, une fois les contrats pluriannuels arrivés à échéance en 2033 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-213",
+   "question": "The French Ministry of Culture's action plan on artificial intelligence, released in summer 2025: how many measures does it contain, and into how many main pillars are they organized?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-214",
+   "question": "Au printemps 2025, d'avril à juin, entre le gros, le détail et l'automobile, quelle branche du négoce avait le plus accru son activité réelle par rapport à janvier-mars ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-215",
+   "question": "Fin 2022, combien de points de recharge publics pour voitures électriques y avait-il en France ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-216",
+   "question": "Selon la déclaration du réseau des banques centrales pour le verdissement de la finance citée par la Cour, que deviendrait le coût économique de la transition d'ici 2030 si l'action climatique coordonnée était reportée de trois ans ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-217",
+   "question": "En 2024, dans quelle fonction publique (État, territoriale ou hospitalière) le salaire net moyen en équivalent temps plein a-t-il le plus progressé en euros constants, et quelles sont les trois hausses ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-218",
+   "question": "Quelle part de leurs achats réglés par carte en magasin les ménages des Pyrénées-Orientales font-ils de l'autre côté de la frontière en 2024 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-219",
+   "question": "Quand on a été hospitalisé à cause de la grippe, quel est le risque de devoir y retourner dans le trimestre suivant, en général et passé 65 ans ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-220",
+   "question": "Fin 2023, combien la filière automobile française compte-t-elle de grandes entreprises, et quelle proportion de la valeur ajoutée de la filière réalisent-elles ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-221",
+   "question": "Quels reproches la Cour des comptes fait-elle aux appels d'offres par lesquels l'État a subventionné les capacités d'effacement de consommation électrique ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-222",
+   "question": "L'enveloppe d'urgence pour les départements en difficulté financière, montée à 600 millions d'euros en 2026, est partagée entre combien d'entre eux ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-223",
+   "question": "Les banques et les assurances ont-elles retrouvé du dynamisme en 2025 ? Quelle croissance de la richesse qu'elles produisent l'Insee mesure-t-il pour cette année ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-224",
+   "question": "Selon les calculs de la Cour, quelle fraction de ce que coûtent chaque année aux finances publiques les mises en concurrence de 2022 et 2024 pour la flexibilité de consommation électrique correspond à un gain excessif des entreprises retenues ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-225",
+   "question": "Quelles pistes la Cour des comptes avance-t-elle pour consolider le soutien public à la filière française du calcul quantique ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-226",
+   "question": "Combien le budget voté pour 2013 escomptait-il de la taxe sur les transactions financières, et combien a-t-elle réellement rapporté cette année-là ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-227",
+   "question": "Effet JO : quelle croissance réelle de leur richesse créée les activités de spectacle, de culture et de loisirs à but lucratif ont-elles connue en 2024, d'après le chiffrage le plus récent ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-228",
+   "question": "Sur l'ensemble des personnes sous le seuil de pauvreté en 2021 (France hors outre-mer), quelle proportion en est sortie pour de bon dans les trois années qui suivent ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-229",
+   "question": "L'Insee, dans ses comptes publics 2024, chiffrait à combien le trou budgétaire des communes, départements et régions pour 2024, et quel montant pour cette même année la Cour des comptes retient-elle dans son rapport 2026 sur les finances locales ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-230",
+   "question": "D'après l'étude Insee-SDES d'octobre 2025, quelle proportion des gaz à effet de serre liés à ce que consomment les Français en 2023 a été rejetée en Chine ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-231",
+   "question": "Selon la Cour (juin 2026), qu'a rapporté en 2025 la nouvelle contribution qui garantit un taux d'imposition minimal aux ménages les plus aisés, au regard de ce qui était attendu ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-232",
+   "question": "Combien a coûté, tous frais compris, le tri des dossiers déposés à l'appel principal (plan d'action) de l'agence qui finance la recherche sur projets en 2024, ramené à chaque dossier recevable ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-233",
+   "question": "Les ménages ont-ils touché beaucoup plus de dividendes en 2024 ? De quel pourcentage les revenus de placements mobiliers déclarés au fisc ont-ils crû cette année-là selon l'Insee ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-234",
+   "question": "Selon l'Insee, combien les usines d'au moins 20 salariés ont-elles investi en 2024 (études non comprises) pour limiter leur impact sur l'environnement, et selon la Cour des comptes, quel volume annuel d'émissions évitées France 2030 visait-il pour l'industrie grâce aux subventions accordées jusqu'en 2025 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-235",
+   "question": "Les Français achètent-ils toujours moins de mobilier et d'électroménager ? Depuis combien d'années ce poste de dépenses diminue-t-il en volume, et de combien a-t-il baissé la dernière année connue ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-236",
+   "question": "How many repayable loans did the economic and social development fund (FDES, fonds de développement économique et social) grant in 2022, and for what total amount?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-237",
+   "question": "Au quatrième trimestre 2025, quel était le taux de chômage au sens du BIT en France ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-238",
+   "question": "En 2024, combien gagne en moyenne par mois, net et à temps complet, un agent employé par les services départementaux de pompiers ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-239",
+   "question": "Selon l'Insee, combien les usines de 20 salariés ou plus ont-elles dépensé au total pour limiter leur impact sur l'environnement en 2023 puis en 2024, et quelle est la hausse en euros ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-240",
+   "question": "Combien compte-t-on de centenaires en France en 2026, et combien pourrait-il y en avoir en 2070 d'après l'hypothèse médiane de l'Insee ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-241",
+   "question": "En 2025, quel conseil départemental dégageait le moins d'épargne nette par rapport à ses recettes courantes de fonctionnement, et à combien s'élevait ce ratio ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-242",
+   "question": "Dans la feuille de route de financement de la transition écologique publiée en 2025, combien d'investissements manque-t-il en 2030 pour réduire les émissions, et combien estimait la version précédente ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-243",
+   "question": "En 2024, combien de mois duraient en moyenne les échéanciers de paiement de cotisations en retard consentis par l'Urssaf, et ceux des très petites entreprises ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-244",
+   "question": "Entre début 2014 et début 2024, de combien de points a baissé le taux d'effort net pour le logement du quart des ménages les plus modestes ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-245",
+   "question": "Selon les projections de l'Insee, combien de personnes de 65 ans ou plus y aurait-il pour 100 adultes de 20 à 64 ans en 2026, puis en 2040 ? Et d'après la Cour des comptes, quel est l'équilibre entre agents qui paient et pensionnés dans le système de retraite des fonctionnaires d'État, comparé à celui des salariés du privé ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-246",
+   "question": "Quelle proportion des personnes de 65 à 69 ans occupe un emploi en France en 2025 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-247",
+   "question": "En 2024, quelle était la teneur moyenne en nitrates des rivières de la baie algues vertes de Saint-Brieuc ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-248",
+   "question": "Pour quelle raison le salaire net moyen en EQTP des agents de la territoriale a-t-il encore baissé en euros constants en 2024 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-249",
+   "question": "Les usines ont-elles moins payé pour leur électricité, leur gaz et leur fioul en 2024 qu'en 2023 ? Plus largement, qu'est-ce qui distingue et rapproche ces deux années ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-250",
+   "question": "Combien les particuliers ont-ils investi au total en 2025, essentiellement dans la pierre, en milliards d'euros courants, d'après le bilan annuel de l'économie française paru en mai 2026 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-251",
+   "question": "Fin 2022, en classant les structures d'hospitalisation à domicile selon leur statut et leur rattachement (public ; groupe privé ; structure indépendante gérant plusieurs établissements ; structure indépendante à établissement unique, lucrative ou non), quel type concentre le plus de places d'HAD en France ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-252",
+   "question": "Parmi les indépendants hors agriculture qui ne sont pas micro-entrepreneurs, quelle proportion ne gagne rien ou perd de l'argent sur son activité, d'après les chiffres les plus récents de l'Insee ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-253",
+   "question": "Combien la Bibliothèque nationale de France dit-elle consacrer à l'intelligence artificielle, et quelle part vient de France 2030 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-254",
+   "question": "Avant les premières mises en concurrence de 2018, quelle année la rémunération moyenne versée pour réserver des baisses de consommation sur le mécanisme d'ajustement a-t-elle été la plus faible, et à combien ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-255",
+   "question": "Les fertilisants ont-ils coûté beaucoup moins cher aux exploitants en 2024 ? Quelle baisse les comptes agricoles les plus récents retiennent-ils ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-256",
+   "question": "If French central government civil servants (fonction publique d'État) paid the same pension contribution as private-sector employees, how much would that raise according to the Cour des comptes (2026)?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-257",
+   "question": "Quelle est aujourd'hui l'intensité carbone du produit intérieur brut français, d'après le dernier chiffrage de l'Insee et du SDES ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-258",
+   "question": "En France, quelle proportion des voitures neuves immatriculées en 2025 étaient électriques ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-259",
+   "question": "Combien de personnes se sont mises à leur compte en 2025 pour vendre chez les particuliers (porte-à-porte, réunions), en entreprise individuelle hors micro, et quel pic avait-on connu en 2020 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-260",
+   "question": "Combien coûte, selon la Cour, la formation des internes en médecine en 2024, et quelle somme correspond à leurs salaires et à ceux des docteurs juniors ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-261",
+   "question": "Dans le bilan économique annuel de l'Insee paru en mai 2026, quelle année depuis 2015 la France a-t-elle enregistré son plus gros trou dans ses échanges avec le reste du monde ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-262",
+   "question": "Qu'est-ce qui distingue les auto-entrepreneurs qui durent de ceux qui jettent l'éponge, d'après le suivi par l'Insee de ceux lancés en 2018 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-263",
+   "question": "En 2019, en métropole, en Martinique et à La Réunion, combien sur cent des ménages de seniors (65 à 79 ans) faisant partie des 10 % les plus aisés paient quelqu'un pour les aider chez eux ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-264",
+   "question": "Selon un sondage mené à l'automne 2023 auprès de plus de 2 000 internes et cité par la Cour, quelle est leur durée hebdomadaire moyenne de travail en stage, et quelle proportion excède le maximum légal ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-265",
+   "question": "Dans les comptes du commerce de 2025, quel segment a vu baisser à la fois les quantités vendues et son chiffre d'affaires en euros courants ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-266",
+   "question": "En 2014, combien de thèses CIFRE ont été financées en informatique quantique ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-267",
+   "question": "En 2022, combien la région Hauts-de-France a-t-elle dépensé en financements régionaux en lien avec la stratégie nationale sur le quantique ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-268",
+   "question": "D'après la Cour des comptes, combien les administrations publiques ont-elles consacré à la recherche et développement en France en 2024, et jusqu'à quel montant annuel les crédits d'intervention de l'ANR sont-ils montés selon son rapport sur l'agence ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-269",
+   "question": "En 2012, combien de généralistes libéraux étaient médecins traitants ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-270",
+   "question": "Why does the Cour des comptes recommend extending rent controls to all high-demand housing areas (zones tendues)?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-271",
+   "question": "Quelle source d'énergie explique surtout l'augmentation de la facture énergétique des industriels français en 2024 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-272",
+   "question": "D'après le compte des administrations publiques publié par l'Insee, combien l'État et les organismes centraux ont-ils versé aux collectivités et organismes publics locaux en transferts courants en 2025, et ce flux a-t-il augmenté ou diminué ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-273",
+   "question": "Quelle population au 1er janvier 2025 l'Insee annonçait-il dans son bilan démographique 2024, et quel chiffre donne-t-il pour la même date dans celui de 2025 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-274",
+   "question": "In 2024 in metropolitan France, what share of people living as a couple with children are below the poverty line, when the household reference person is under 65?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-275",
+   "question": "En 2024, quel pourcentage des cadres salariés travaillaient depuis chez eux au moins une journée par semaine en France ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-276",
+   "question": "Que préconise la Cour au ministère de l'agriculture pour les aides agroenvironnementales et climatiques du plan stratégique national de la PAC ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-277",
+   "question": "D'après le réseau international de banques centrales pour le climat, cité par la Cour, si l'économie mondiale se morcelait en blocs, quel recul de PIB l'Europe subirait-elle en 2040 par rapport à 2022 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-278",
+   "question": "How many medical assistant (assistant médical) contracts had been signed by the end of January 2026, and what target has been set for 2028?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-279",
+   "question": "Bien que les naissances diminuent, à combien se monte l'excédent des naissances sur les décès en France en 2025 ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-280",
+   "question": "Sur les 6,3 millions de patients qui n'ont pas désigné de généraliste référent, combien, en proportion, voient réellement leurs remboursements diminuer ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-281",
+   "question": "En 2025, parmi les fonctionnaires civils de l'État qui ont cessé de travailler pour toucher leur pension, quelle proportion l'a fait pour raisons familiales ?",
+   "lang": "fr"
+  },
+  {
+   "qid": "test-282",
+   "question": "Between 2020 and 2025, how did the average grant per project paid out by France's public sports agency for major sports facilities change?",
+   "lang": "en"
+  },
+  {
+   "qid": "test-283",
+   "question": "De combien la dépense publique de retraites a-t-elle augmenté en 2024 selon l'Insee, et combien le régime de retraite des fonctionnaires de l'État a-t-il versé de prestations en 2025 selon la Cour des comptes ?",
+   "lang": "fr"
+  }
+ ]
+}
