@@ -18,7 +18,7 @@ import re
 import time
 from pathlib import Path
 
-from . import parse
+from . import parse, proof
 
 TAU = 0.05            # seuil du reranker, calibré sur la validation (voir pipeline/calibrate.py)
 CONTEXT_TOKENS = 3400  # sous les 4 096 : marge pour la question et la consigne
@@ -100,7 +100,7 @@ def _head(h: dict, dates: dict[str, str]) -> str:
 
 
 def build_context(gen, item: dict, dates: dict[str, str], mode: str = "mixte",
-                  n_full: int = 2) -> tuple[list[dict], str, list[dict]]:
+                  n_full: int = 2, system: str | None = None) -> tuple[list[dict], str, list[dict]]:
     """Construit le prompt en ajoutant des blocs par ordre de pertinence tant que le budget tient.
 
     mode "chunks" : les meilleurs passages seulement.
@@ -120,16 +120,16 @@ def build_context(gen, item: dict, dates: dict[str, str], mode: str = "mixte",
     blocks, used = [], []
     for h in candidates[:MAX_CHUNKS]:
         candidate = blocks + [f"{_head(h, dates)}\n{h['text']}"]
-        if gen.count_tokens(_messages(question, candidate)) > CONTEXT_TOKENS:
+        if gen.count_tokens(_messages(question, candidate, system)) > CONTEXT_TOKENS:
             if blocks:
                 continue  # ce bloc ne tient pas : on tente le suivant, plus court
             candidate = [candidate[0][:6000]]
         blocks, used = candidate, used + [h]
-    return _messages(question, blocks), "\n\n".join(blocks), used
+    return _messages(question, blocks, system), "\n\n".join(blocks), used
 
 
-def _messages(question: str, blocks: list[str]) -> list[dict]:
-    return [{"role": "system", "content": SYSTEM},
+def _messages(question: str, blocks: list[str], system: str | None = None) -> list[dict]:
+    return [{"role": "system", "content": system or SYSTEM},
             {"role": "user", "content": "Extraits :\n\n" + "\n\n".join(blocks) + f"\n\nQuestion : {question}"}]
 
 
@@ -150,32 +150,79 @@ def parse_answer(raw: str, used: list[dict]) -> tuple[str, list[dict]]:
 
 
 def answer_one(gen, item: dict, dates: dict[str, str], tau: float = TAU, check_numbers: bool = True,
-               mode: str = "mixte") -> dict:
+               mode: str = "mixte", strategy: str = "consensus", verify: bool = False,
+               min_coverage: float = 0.7, second_context: str = "mixte") -> dict:
+    """strategy "direct" : réponse libre + ligne SOURCES.
+    strategy "preuve" : le générateur recopie la phrase qui justifie sa réponse et le pipeline la
+    vérifie (voir pipeline/proof.py).
+    strategy "consensus" : « preuve », puis un second appel « direct » ; on ne répond que si les deux
+    réponses concordent (2 appels par question au plus)."""
     hits = item["hits"]
     pred = {"qid": item["qid"], "answer": "INTROUVABLE", "citations": [], "retrieved": item["retrieved"]}
     gen.start_question(item["qid"])
     if not hits or hits[0]["score"] < tau:
         pred["abstention"] = "seuil"
         return pred
-    msgs, context, used = build_context(gen, item, dates, mode)
-    raw = gen.chat(msgs, max_new_tokens=220)
+    system = SYSTEM if strategy == "direct" else proof.SYSTEM
+    msgs, context, used = build_context(gen, item, dates, mode, system=system)
+    raw = gen.chat(msgs, max_new_tokens=220 if strategy == "direct" else 300)
     pred["raw"] = raw
     if "INTROUVABLE" in raw.upper():
         pred["abstention"] = "generateur"
         return pred
-    answer, cits = parse_answer(raw, used)
-    if not answer:
-        pred["abstention"] = "vide"
+    if strategy == "direct":
+        answer, cits = parse_answer(raw, used)
+        if not answer:
+            pred["abstention"] = "vide"
+        elif check_numbers and not grounded(answer, context + " " + item["question"]):
+            pred["abstention"] = "ancrage"
+        else:
+            pred["answer"], pred["citations"] = answer, cits
         return pred
-    if check_numbers and not grounded(answer, context + " " + item["question"]):
+
+    quote, answer = proof.split_fields(raw)
+    answer = answer.replace("**", "")
+    if not quote or not answer:
+        pred["abstention"] = "format"
+        return pred
+    block, coverage = proof.locate(quote, used)
+    pred["coverage"] = round(coverage, 2)
+    if block is None or coverage < min_coverage:
+        pred["abstention"] = "preuve absente"
+        return pred
+    if check_numbers and not proof.numbers_in_proof(answer, quote, item["question"]):
         pred["abstention"] = "ancrage"
         return pred
-    pred["answer"], pred["citations"] = answer, cits
+    if verify:
+        check = [{"role": "system", "content": proof.VERIFY_SYSTEM},
+                 {"role": "user", "content": f"Question : {item['question']}\n\nPassage : {quote}\n\n"
+                                             f"Réponse proposée : {answer}"}]
+        verdict = gen.chat(check, max_new_tokens=5)
+        pred["verdict"] = verdict
+        if "OUI" not in verdict.upper():
+            pred["abstention"] = "verification"
+            return pred
+    if strategy == "consensus":
+        # second avis : même question, consigne « réponse directe ». Le générateur se trompe souvent,
+        # mais rarement deux fois de la même façon : on ne répond que si les deux avis concordent.
+        msgs2, _, _ = build_context(gen, item, dates, second_context, system=SYSTEM)
+        raw2 = gen.chat(msgs2, max_new_tokens=220)
+        pred["raw2"] = raw2
+        second, _ = parse_answer(raw2, used)
+        if "INTROUVABLE" in raw2.upper() or not proof.agree(answer, second):
+            pred["abstention"] = "desaccord"
+            return pred
+    # citations : la page où la preuve a été retrouvée, puis celles que le générateur a citées
+    _, cits = parse_answer(raw, used)
+    first = {"doc_id": block["doc_id"], "page": block["page"]}
+    pred["answer"] = answer
+    pred["citations"] = ([first] + [c for c in cits if c != first])[:5]
     return pred
 
 
 def generate(retrieved_path: str, out_path: str, backend: str = "hf", tau: float = TAU,
-             check_numbers: bool = True, run_name: str = "pipeline", mode: str = "mixte") -> None:
+             check_numbers: bool = True, run_name: str = "pipeline", mode: str = "mixte",
+             strategy: str = "consensus", verify: bool = False, second_context: str = "mixte") -> None:
     from groundtruth.generator import OfficialGenerator
     from groundtruth.io import write_predictions
 
@@ -184,7 +231,8 @@ def generate(retrieved_path: str, out_path: str, backend: str = "hf", tau: float
     gen = OfficialGenerator(backend=backend)
     preds, t0 = [], time.time()
     for item in items:
-        pred = answer_one(gen, item, dates, tau, check_numbers, mode)
+        pred = answer_one(gen, item, dates, tau, check_numbers, mode, strategy, verify,
+                          second_context=second_context)
         preds.append(pred)
         print(f"{pred['qid']}: {pred['answer'][:90]}", flush=True)
     print(f"[generate] {(time.time() - t0) / max(len(preds), 1):.1f} s par question")
